@@ -1,0 +1,8 @@
+{
+  "clustering": "on",
+  "environment": "local",
+  "logging": {
+    "level": "info",
+    "fileName": "/var/log/on-air-panel/app.log"
+  }
+}
