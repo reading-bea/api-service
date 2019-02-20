@@ -1,0 +1,16 @@
+extends: iplayer
+parserOptions:
+  sourceType: module
+rules:
+  mocha/no-exclusive-tests: warn
+  func-style:
+    - error
+    - declaration
+    - allowArrowFunctions: true
+  arrow-parens:
+    - error
+    - as-needed
+env:
+  browser: true
+globals:
+  requirejs: true

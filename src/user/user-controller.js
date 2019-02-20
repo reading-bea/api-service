@@ -14,18 +14,18 @@ router.post('/', (req, res) => {
     email: req.body.email,
     password: req.body.password
   }, (err, user) => {
-      if (err) {
-        return res.status(500).send("There was a problem adding the information to the database.");
-      }
-      res.status(200).send(user);
-    });
+    if (err) {
+      return res.status(500).send('There was a problem adding the information to the database.');
+    }
+    res.status(200).send(user);
+  });
 });
 
 // Update a user
-router.put('/:id', function (req, res) {
-  User.findByIdAndUpdate(req.params.id, req.body, { new: true }, function (err, user) {
+router.put('/:id', (req, res) => {
+  User.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, user) => {
     if (err) {
-      return res.status(500).send("There was a problem updating the user.");
+      return res.status(500).send('There was a problem updating the user.');
     }
     res.status(200).send(user);
   });
@@ -35,7 +35,7 @@ router.put('/:id', function (req, res) {
 router.get('/', (req, res) => {
   User.find({}, (err, users) => {
     if (err) {
-      return res.status(500).send("There was a problem finding the users.");
+      return res.status(500).send('There was a problem finding the users.');
     }
     res.status(200).send(users);
   });
@@ -45,22 +45,22 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   User.findById(req.params.id, (err, user) => {
     if (err) {
-      return res.status(500).send("There was a problem finding the user.");
+      return res.status(500).send('There was a problem finding the user.');
     }
     if (!user) {
-      return res.status(404).send("No user found.");
+      return res.status(404).send('No user found.');
     }
     res.status(200).send(user);
   });
 });
 
 // Delete a user
-router.delete('/:id', function (req, res) {
-  User.findByIdAndRemove(req.params.id, function (err, user) {
+router.delete('/:id', (req, res) => {
+  User.findByIdAndRemove(req.params.id, (err, user) => {
     if (err) {
-      return res.status(500).send("There was a problem deleting the user.");
+      return res.status(500).send('There was a problem deleting the user.');
     }
-    res.status(200).send("User " + user.name + " was deleted.");
+    res.status(200).send('User ' + user.name + ' was deleted.');
   });
 });
 
