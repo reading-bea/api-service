@@ -1,20 +1,27 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const cors = require('cors');
+const setupDatabase = require('./db');
+const errorRoute = require('./routes/error');
 const app = express();
 
-// User route
-const UserController = require('./user/user-controller');
-app.use('/users', UserController);
+// Configure app
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(session({ secret: 'reading-bea-service', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
 
-// Book route
-const BookController = require('./book/book-controller');
-app.use('/books', BookController);
+setupDatabase();
 
-// Not found route
-const NotFoundController = require('./error/not-found-controller');
-app.get('*', NotFoundController);
-
-// Error route
-const ErrorController = require('./error/error-controller');
-app.use(ErrorController);
+// Models & routes
+require('./models/users');
+require('./config/passport');
+// API routes
+app.use(require('./routes'));
+// 404 route
+app.get('*', (req, res, next) => errorRoute(res, { message: `${req.path} was not found`, status: 404 }, next));
+// 500 route
+app.use(errorRoute);
 
 module.exports = app;

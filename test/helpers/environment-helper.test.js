@@ -3,7 +3,7 @@ const sandbox = require('sinon').createSandbox();
 const config = require('config');
 const { isCloudEnvironment, getEnvironmentDnsFragment } = require('../../src/helpers/environment-helper');
 
-describe('--- Environment Helper ---', () => {
+describe('Environment Helper', () => {
 
   afterEach(() => sandbox.restore());
 

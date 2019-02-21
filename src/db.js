@@ -1,2 +1,3 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/reading-bea');
+
+module.exports = () => mongoose.connect('mongodb://localhost:27017/reading-bea');

@@ -1,19 +1,15 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
-const ErrorController = require('../../src/error/error-controller');
+const errorRoute = require('../../src/routes/error');
 
 const sandbox = sinon.createSandbox();
 
-describe('--- Error Handler Controller ---', () => {
+describe('Error Route', () => {
 
-  let next;
-
-  beforeEach(() => next = sandbox.spy());
   afterEach(() => sandbox.restore());
 
   it('should set the Cache-Control header', done => {
     const error = new Error();
-
     const response = {
       headersSent: false,
       status: sandbox.stub().returnsThis(),
@@ -28,24 +24,38 @@ describe('--- Error Handler Controller ---', () => {
         done();
       })
     };
-    ErrorController(error, null, response, next);
+
+    errorRoute(response, error);
   });
 
-  it('should call the send method', done => {
+  it('should call the json method', done => {
     const error = new Error('Test error message');
-    const templateParams = { title: 'Error', error: error.message };
-
     const response = {
       headersSent: false,
       status: sandbox.stub().returnsThis(),
       set: () => { },
-      send: sandbox.stub().callsFake(() => {
-        expect(response.send.calledOnce).to.be.true;
-        expect(response.send.calledWith('Error: Test error message')).to.be.true;
+      json: sandbox.stub().callsFake(() => {
+        expect(response.json.calledOnce).to.be.true;
         done();
       })
     };
-    ErrorController(error, null, response, next);
+
+    errorRoute(response, error);
+  });
+
+  it('should call next if headers have been sent already', () => {
+    const next = sandbox.spy();
+    const error = new Error('Test error message');
+    const response = {
+      headersSent: true,
+      status: sandbox.stub().returnsThis(),
+      set: () => { },
+      json: sandbox.stub()
+    };
+
+    errorRoute(response, error, next);
+
+    expect(next.calledOnce).to.be.true;
   });
 
 });

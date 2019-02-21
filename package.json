@@ -5,19 +5,27 @@
   "scripts": {
     "dev": "nodemon ./src/server.js",
     "start": "node ./src/server.js",
-    "test": "env ALLOW_CONFIG_MUTATIONS=true mocha 'test/**/*.test.js'",
-    "lint": "eslint src"
+    "test": "env ALLOW_CONFIG_MUTATIONS=true mocha 'test/**/*.test.js' --exit",
+    "lint": "eslint src",
+    "coverage": "nyc --reporter=html yarn test"
   },
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "config": "^3.0.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.5.0",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.23",
     "mongoose": "^5.4.14",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
@@ -27,7 +35,17 @@
     "eslint-plugin-mocha": "^5.3.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.10",
+    "nyc": "^13.3.0",
     "sinon": "^7.2.3",
     "supertest": "^3.4.2"
+  },
+  "nyc": {
+    "exclude": [
+      "test",
+      "src/config"
+    ],
+    "extension": [
+      ".js"
+    ]
   }
 }

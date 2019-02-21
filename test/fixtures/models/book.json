@@ -1,0 +1,88 @@
+{
+  "kind": "books#volume",
+  "id": "7yW4AwAAQBAJ",
+  "etag": "97bnrb9aoX8",
+  "selfLink": "https://www.googleapis.com/books/v1/volumes/7yW4AwAAQBAJ",
+  "volumeInfo": {
+    "title": "A Game of Thrones: The Graphic Novel",
+    "subtitle": "Volume One",
+    "authors": [
+      "George R. R. Martin"
+    ],
+    "publisher": "Bantam Dell",
+    "publishedDate": "2012-03-27",
+    "description": "You’ve read the books. You’ve watched the hit series on HBO. Now acclaimed novelist Daniel Abraham and illustrator Tommy Patterson bring George R. R. Martin’s epic fantasy masterwork A Game of Thrones to majestic new life in the pages of this graphic novel. Comprised of the initial six issues of the comic book series, this is the first volume in what is sure to be one of the most coveted collaborations of the year. Winter is coming. Such is the stern motto of House Stark, the northernmost of the fiefdoms that owe allegiance to King Robert Baratheon in far-off King’s Landing. There Eddard Stark of Winterfell rules in Robert’s name. There his family dwells in peace and comfort: his proud wife, Catelyn, his sons Robb, Brandon, and Rickon, his daughters Sansa and Arya, and his bastard son, Jon Snow. Far to the north, behind the towering Wall, lie savage Wildings and worse—unnatural things relegated to myth during the centuries-long summer . . . but proving all too real and all too deadly in the turning of the season. Yet a more immediate threat lurks to the south, where Jon Arryn, the Hand of the King, has died under mysterious circumstances. Now Robert is riding north to Winterfell, bringing his queen, the lovely but cold Cersei, his son, Prince Joffrey, a cruel, vainglorious youth, and the queen’s brothers Jaime and Tyrion of the powerful and wealthy House Lannister—the first a swordsman without equal, the second a dwarf whose stunted stature belies a brilliant mind. All heading for Winterfell and a fateful encounter that will change the course of kingdoms. While across the Narrow Sea, Prince Viserys, heir of the fallen House Targaryen, which once ruled all of Westeros, schemes to reclaim the throne with an army of barbarian Dothraki—whose loyalty he will purchase in the only coin left to him: his beautiful yet innocent sister, Daenerys.",
+    "industryIdentifiers": [
+      {
+        "type": "ISBN_13",
+        "identifier": "9780345535573"
+      },
+      {
+        "type": "ISBN_10",
+        "identifier": "034553557X"
+      }
+    ],
+    "readingModes": {
+      "text": true,
+      "image": false
+    },
+    "pageCount": 176,
+    "printType": "BOOK",
+    "categories": [
+      "Comics & Graphic Novels"
+    ],
+    "averageRating": 3,
+    "ratingsCount": 8,
+    "maturityRating": "MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "1.4.4.0.preview.2",
+    "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+    },
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=7yW4AwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=7yW4AwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.co.uk/books?id=7yW4AwAAQBAJ&dq=game+of+thrones&hl=&cd=1&source=gbs_api",
+    "infoLink": "http://books.google.co.uk/books?id=7yW4AwAAQBAJ&dq=game+of+thrones&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/A_Game_of_Thrones_The_Graphic_Novel.html?hl=&id=7yW4AwAAQBAJ",
+    "seriesInfo": {
+      "kind": "books#volume_series_info",
+      "shortSeriesBookTitle": "Volume One",
+      "bookDisplayNumber": "1",
+      "volumeSeries": [
+        {
+          "seriesId": "c7rMGgAAABC-oM",
+          "seriesBookType": "COLLECTED_EDITION",
+          "orderNumber": 1
+        }
+      ]
+    }
+  },
+  "saleInfo": {
+    "country": "GB",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+  },
+  "accessInfo": {
+    "country": "GB",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+      "isAvailable": true
+    },
+    "pdf": {
+      "isAvailable": true
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=7yW4AwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+  },
+  "searchInfo": {
+    "textSnippet": "You’ve read the books. You’ve watched the hit series on HBO."
+  }
+}
