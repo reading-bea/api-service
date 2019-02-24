@@ -22,6 +22,6 @@ app.use(require('./routes'));
 // 404 route
 app.get('*', (req, res, next) => errorRoute(res, { message: `${req.path} was not found`, status: 404 }, next));
 // 500 route
-app.use(errorRoute);
+app.use((err, _, res, next) => errorRoute(res, err, next));
 
 module.exports = app;

@@ -2,6 +2,8 @@ const logger = require('../helpers/logger');
 const error = require('../models/error');
 
 module.exports = (res, err, next) => {
+  console.log('------- err -------');
+  console.log(err);
   if (res.headersSent) {
     return next(err);
   }

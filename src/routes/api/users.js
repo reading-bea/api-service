@@ -74,8 +74,6 @@ router.delete('/:id', (req, res, next) => {
 // GET current route (required, only authenticated users have access)
 router.get('/current', auth.required, (req, res, next) => {
   const { user } = req;
-  
-  console.log(user);
 
   return Users.findById(user.id)
     .then(user => {
